@@ -55,7 +55,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
         return;
     }
     //初始化设备输出对象，用于获得输出数据
-    _captureStillImageOutput=[[AVCaptureStillImageOutput alloc]init];
+    _captureStillImageOutput=[[AVCaptureStillImageOutput alloc] init];
     NSDictionary *outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
     [_captureStillImageOutput setOutputSettings:outputSettings];//输出设置
     
@@ -78,7 +78,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     _captureVideoPreviewLayer.frame=layer.bounds;
     _captureVideoPreviewLayer.videoGravity=AVLayerVideoGravityResizeAspectFill;//填充模式
     //将视频预览层添加到界面中
-    //[layer addSublayer:_captureVideoPreviewLayer];
+//    [layer addSublayer:_captureVideoPreviewLayer];
     [layer insertSublayer:_captureVideoPreviewLayer below:self.focusCursor.layer];
     
     [self addNotificationToCaptureDevice:captureDevice];
